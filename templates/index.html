@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Bike Price Prediction</title>
+
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            background: linear-gradient(135deg, #e8f0ff, #f8f9ff);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 650px;
+            background: white;
+            padding: 45px;
+            border-radius: 18px;
+            text-align: center;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.15);
+        }
+
+        h1 {
+            color: #222;
+            font-size: 38px;
+            margin-bottom: 15px;
+        }
+
+        .description {
+            color: #666;
+            font-size: 17px;
+            line-height: 1.6;
+            margin-bottom: 30px;
+        }
+
+        .predict-btn {
+            display: inline-block;
+            padding: 14px 30px;
+            background: #4a70e8;
+            color: white;
+            text-decoration: none;
+            border-radius: 8px;
+            font-size: 18px;
+            font-weight: bold;
+        }
+
+        .predict-btn:hover {
+            background: #3458c5;
+        }
+
+        /* Prediction Result */
+        .result {
+            margin-top: 30px;
+            padding: 20px;
+            background: #f1f5ff;
+            border-radius: 10px;
+        }
+
+        .result h2 {
+            color: #222;
+            margin-bottom: 10px;
+        }
+
+        .price {
+            font-size: 30px;
+            font-weight: bold;
+            color: #4a70e8;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+
+        <h1>Bike Price Prediction</h1>
+
+        <p class="description">
+            Enter your bike details and our machine learning model
+            will predict the estimated bike price.
+        </p>
+
+        <a href="/register" class="predict-btn">
+            Predict Bike Price
+        </a>
+
+
+        <!-- Prediction will appear here -->
+        {% if prediction is not none %}
+
+        <div class="result">
+
+            <h2>Predicted Bike Price</h2>
+
+            <div class="price">
+                ₹ {{ prediction }}
+            </div>
+
+        </div>
+
+        {% endif %}
+
+    </div>
+
+</body>
+</html>
